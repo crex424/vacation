@@ -4,34 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/vacation.css">
+    <link rel="icon" href="/images/palmtree.jpg" type="image/x-icon">
+    <script src="/scripts/vacation.js" defer></script>
     <title>Vacation</title>
 </head>
 <body>
     <div id="header">
         <h1>Book Your Dream Vacation</h1>
-    </div>
-
     <div id="main">
-        <form id="vacation-form" action="#" method="post">
-            <label for="destination">Destination</label>
-            <select name="destination" id="destination">
-                <option value="none">Choose a destination...</option>
-                <option value="germany">Germany</option>
-                <option value="japan">Japan</option>
-                <option value="scotland">Scotland</option>
-                <option value="uk">UK</option>
-                <option value="austria">Austria</option>
-            </select>
-            <label for="departure-date">Departure Date</label>
-            <input type="date" name="departure-date" id="departure-date">
-
-            <label for="num-travelers">Number of Travelers</label>
-            <input type="number" name="num-travelers" id="num-travelers">
+        <form id="vacation-form" action="/confirm" method="get">
+            <div id="row-one">
+                <div class="content">
+                    <label for="destination">Destination</label>
+                    <span id="destination-err" class="err">Please select destination!</span>
+                    <select name="destination" id="destination">
+                        <option value="none">Choose a destination...</option>
+                        <option value="germany">Germany</option>
+                        <option value="japan">Japan</option>
+                        <option value="scotland">Scotland</option>
+                        <option value="uk">UK</option>
+                        <option value="austria">Austria</option>
+                    </select>
+                </div>
+            </div>
+            <div id="row-two">
+                <div class="content">
+                    <label for="departure-date">Departure Date</label>
+                    <input type="date" name="departure-date" id="departure-date">
+                </div>
+                <div class="content">
+                    <label for="num-travelers">Number of Travelers</label>
+                    <span id="num-err" class="err">Please enter the number of people going!</span>
+                    <input type="number" name="num-travelers" id="num-travelers">
+                </div>
+            </div>
+            
 
             <div id="submit-btn">
                 <button type="submit">Find My Vacation</button>
             </div>
         </form>
+    </div>
+    <div id="footer">
+        <a href="https://github.com/crex424/vacation">Github Repository: https://github.com/crex424/vacation</a>
     </div>
 </body>
 </html>
